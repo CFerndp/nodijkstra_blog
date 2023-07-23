@@ -20,3 +20,6 @@ create-migration:
 
 execute-migration:
 	php bin/console doctrine:migration:migrate
+
+dev-web:
+	yarn watch
