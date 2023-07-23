@@ -17,3 +17,6 @@ stop-docker:
 
 create-migration:
 	php bin/console make:migration
+
+execute-migration:
+	php bin/console doctrine:migration:migrate
