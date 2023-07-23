@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
             return [
                 'comments' => CommentFactory::new()->many(0, 8),
                 'tags' => TagFactory::randomRange(1, 5),
-                'user' => UserFactory::random(),
+                'user_relationship' => UserFactory::random(),
             ];
         });
     }
