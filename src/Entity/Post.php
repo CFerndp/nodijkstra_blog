@@ -35,6 +35,10 @@ class Post
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user_relationship = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +124,18 @@ class Post
     public function setContent(string $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getUserRelationship(): ?User
+    {
+        return $this->user_relationship;
+    }
+
+    public function setUserRelationship(?User $user_relationship): static
+    {
+        $this->user_relationship = $user_relationship;
 
         return $this;
     }
