@@ -15,3 +15,5 @@ run-docker:
 stop-docker:
 	docker compose stop
 
+create-migration:
+	php bin/console make:migration
