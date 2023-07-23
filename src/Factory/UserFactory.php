@@ -48,10 +48,10 @@ final class UserFactory extends ModelFactory
     protected function getDefaults(): array
     {
         return [
-            'email' => self::faker()->text(180),
+            'email' => self::faker()->email(),
             'password' => 'login123',
             'roles' => ['ROLE_USER'],
-            'username' => self::faker()->text(100),
+            'username' => self::faker()->unique()->userName()
         ];
     }
 
@@ -65,9 +65,7 @@ final class UserFactory extends ModelFactory
             $user->setPassword(
                 $this->hasher->hashPassword($user, $user->getPassword())
             );
-        })
-    ;
-        ;
+        });
     }
 
     protected static function getClass(): string
